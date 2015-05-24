@@ -6,8 +6,11 @@
   vars_files:
       - vars/mysql.yml
       - vars/common.yml
+      - vars/apachephp.yml
   roles:
     - init
     - mysql
     - php5
+    - { role: apache,  ws_vhost_env: prod, servername: prod.myApp.vb }
+    - { role: apache,  ws_vhost_env: dev, servername: dev.myApp.vb }
 

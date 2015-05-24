@@ -1,0 +1,29 @@
+---
+- name: Install Apache
+  sudo: yes
+  apt: pkg=apache2 state=latest
+
+- name: Install Apache Modules
+  apache2_module: state=present name={{ item }}
+  notify: restart apache
+  with_items:
+    - rewrite
+    - vhost_alias
+    - headers
+    - expires
+    - filter
+
+- shell: apache2 -v
+  register: apache_version
+
+- name: Change default apache2.4 env {{ ws_vhost_env }}
+  sudo: yes
+  template: src=vhost24.conf.tpl dest={{ ws_vhost_path }}/{{ ws_vhost_env }}.conf
+  notify: restart apache
+  when: apache_version.stdout.find('Apache/2.4.') != -1
+
+- name: Change default apache2.2 env {{ ws_vhost_env }} env
+  sudo: yes
+  template: src=vhost22.conf.tpl dest={{ ws_vhost_path }}/{{ ws_vhost_env }}.conf
+  notify: restart apache
+  when: apache_version.stdout.find('Apache/2.2.') != -1
