@@ -1,0 +1,9 @@
+---
+- hosts: all
+  sudo: true
+  vars:
+    timezone: UTC
+  roles:
+    - init
+    - php5
+
