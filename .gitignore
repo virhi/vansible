@@ -3,4 +3,4 @@
 .vagrant/
 .idea
 ansible/.DS_Store
-
+ansible/required-role
