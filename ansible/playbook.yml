@@ -3,7 +3,11 @@
   sudo: true
   vars:
     timezone: UTC
+  vars_files:
+      - vars/mysql.yml
+      - vars/common.yml
   roles:
     - init
+    - mysql
     - php5
 

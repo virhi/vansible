@@ -1,0 +1,5 @@
+mysql:
+    root_password: root
+    user: vansible
+    password: vansible
+    database: vansible

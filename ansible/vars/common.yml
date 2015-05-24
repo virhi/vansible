@@ -1,0 +1,6 @@
+---
+    doc_root: /vagrant
+    sys_packages: ["vim","curl", "git", "wget", "python-software-properties"]
+    dist: precise
+    php_packages: ["php5-cli","php5-gd","php5-mysql"]
+    pecl_packages: []

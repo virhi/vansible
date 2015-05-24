@@ -6,11 +6,7 @@
 - name: Install System Packages
   sudo: yes
   apt: pkg={{ item }} state=latest
-  with_items:
-    - curl
-    - wget
-    - git
-    - python-software-properties
+  with_items: sys_packages
 
 - name: Configure the timezone
   sudo: yes
