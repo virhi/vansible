@@ -4,13 +4,8 @@
   vars:
     timezone: UTC
   vars_files:
-      - vars/mysql.yml
       - vars/common.yml
-      - vars/apachephp.yml
   roles:
     - init
-    - required-role/virhi.mysql
-    - required-role/virhi.php
-    - { role: required-role/virhi.apache, ws_vhost_env: prod, servername: prod.myApp.vb }
-    - { role: required-role/virhi.apache, ws_vhost_env: dev, servername: dev.myApp.vb }
+    - required-role/virhi.lamp
 
