@@ -5,5 +5,5 @@
 Ansible must be install
 
 ##install
-    ansible-galaxy install -r ansible_requirements.txt
+    ansible-galaxy install -r requirements.yml
     vagrant up

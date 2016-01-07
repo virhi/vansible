@@ -7,5 +7,5 @@
       - vars/common.yml
   roles:
     - init
-    - virhi.lamp
+    - virhi.symfony
 

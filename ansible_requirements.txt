@@ -1,4 +1,0 @@
-virhi.apache
-virhi.mysql
-virhi.php
-virhi.lamp
